@@ -28,7 +28,7 @@ class Utils {
   static Future openEmail({
     required String body,
   }) async {
-    final url = "malito: ?body=${Uri.encodeFull(body)}";
+    final url = "mailto: ?body=${Uri.encodeFull(body)}";
     await _emailLaunch(url);
   }
 
