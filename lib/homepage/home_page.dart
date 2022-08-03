@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {
                         setState(() {
                           _selectedIndex = 1;
-                          print('calisti');
+                          FlutterClipboard.copy(text);
                         });
                       },
                       child: Column(
