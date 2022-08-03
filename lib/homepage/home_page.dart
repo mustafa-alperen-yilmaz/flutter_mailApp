@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mailapp/api/speech_api.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:mailapp/utils/utils.dart';
+import 'package:external_app_launcher/external_app_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -83,6 +84,10 @@ class _HomePageState extends State<HomePage> {
                           _selectedIndex = 1;
                           FlutterClipboard.copy(text);
                         });
+                        LaunchApp.openApp(
+                          androidPackageName: 'com.google.android.gm',
+                          openStore: true,
+                        );
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
