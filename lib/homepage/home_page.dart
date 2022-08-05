@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   bool isMicActive = false;
   final PageStorageBucket _pageStorageBucket = PageStorageBucket();
   Widget curentScreen = const HomePage();
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                       minWidth: 40,
                       onPressed: () {
                         setState(() {
-                          _selectedIndex = 1;
+                          _selectedIndex = 0;
                           FlutterClipboard.copy(text);
                         });
                         LaunchApp.openApp(
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                           Icon(
                             Icons.send,
                             color:
-                                _selectedIndex == 1 ? Colors.blue : Colors.grey,
+                                _selectedIndex == 0 ? Colors.blue : Colors.grey,
                           ),
                         ],
                       ),
