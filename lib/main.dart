@@ -1,5 +1,7 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+//import 'package:mailapp/splashscreen/splash.dart';
 import 'homepage/home_page.dart';
 
 Future main() async {
@@ -23,7 +25,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: AnimatedSplashScreen(
+          splash: Icons.mail,
+          duration: 2000,
+          splashTransition: SplashTransition.rotationTransition,
+          backgroundColor: Colors.blue,
+          nextScreen: const HomePage()),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mailapp/api/speech_api.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:mailapp/utils/utils.dart';
+import 'package:external_app_launcher/external_app_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +16,9 @@ class _HomePageState extends State<HomePage> {
   String text = "mail gönder alepren";
   String appBarTxt = "Mail APP";
   bool isMicActive = false;
+  final PageStorageBucket _pageStorageBucket = PageStorageBucket();
+  Widget curentScreen = const HomePage();
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -35,7 +39,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        body: SingleChildScrollView(
+        body: PageStorage(
+          bucket: _pageStorageBucket,
+          child: SingleChildScrollView(
             reverse: true,
             padding: const EdgeInsets.all(30).copyWith(bottom: 150),
             child: Text(
@@ -45,7 +51,9 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black,
                 fontWeight: FontWeight.w400,
               ),
-            )),
+            ),
+          ),
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: AvatarGlow(
           animate: isMicActive,
@@ -55,6 +63,48 @@ class _HomePageState extends State<HomePage> {
             // ignore: sort_child_properties_last
             child: Icon(isMicActive ? Icons.mic : Icons.mic_none, size: 38),
             onPressed: toggleRecording,
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 10,
+          child: SizedBox(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MaterialButton(
+                      colorBrightness: Brightness.light,
+                      minWidth: 40,
+                      onPressed: () {
+                        setState(() {
+                          _selectedIndex = 0;
+                          FlutterClipboard.copy(text);
+                        });
+                        LaunchApp.openApp(
+                          androidPackageName: 'com.google.android.gm',
+                          iosUrlScheme: 'googlegmail://',
+                          openStore: true,
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.send,
+                            color:
+                                _selectedIndex == 0 ? Colors.blue : Colors.grey,
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       );
