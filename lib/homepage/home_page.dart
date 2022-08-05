@@ -66,6 +66,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
+          color: Colors.blue,
           shape: const CircularNotchedRectangle(),
           notchMargin: 10,
           child: SizedBox(
@@ -95,8 +96,9 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Icon(
                             Icons.send,
-                            color:
-                                _selectedIndex == 0 ? Colors.blue : Colors.grey,
+                            color: _selectedIndex == 0
+                                ? Colors.white
+                                : Colors.grey,
                           ),
                         ],
                       ),
