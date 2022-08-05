@@ -3,7 +3,7 @@
 
 Flutter üstünden geliştirilmiş kolay mail gönderilmesini saglayan ve ayrıca sesli not olarak kullanabileceğiniz bir uygulama.
 
-## Uygulamayı Kullanırken
+### Uygulamayı Kullanırken
 
 Uygulama yapılırken Speech to text kullanılmıştır. Bu sayede kullanıcın telefon diline göre algılama yapabilmektedir. Eğer kullanıcı mail gönder diyip sonra da mesajını söylerse mail içeriğini o mesajla doldurur. Ayrıca kullanıcı Mail gönder demeyip not sesli not da alabilir sonra mesajını uygulamada app barın yanındaki kopyalama ikonuna tıklayarak mesajını kopyalayabilir. Yada mail gönder demeyi unuttuysa ve yine de mail göndermek istiyorsa bottom navigation barda bulunan gönder iconuna tıklayarak gmail uygulamasına yönlendirilir.
 
