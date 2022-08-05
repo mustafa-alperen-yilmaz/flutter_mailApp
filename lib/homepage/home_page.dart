@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
               text,
               style: const TextStyle(
                 fontSize: 30.0,
-                color: Colors.black,
+                //color: Colors.black,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: AvatarGlow(
           animate: isMicActive,
           endRadius: 60,
-          glowColor: Theme.of(context).primaryColor,
+          glowColor: const Color.fromARGB(255, 233, 54, 203),
           child: FloatingActionButton(
             // ignore: sort_child_properties_last
             child: Icon(isMicActive ? Icons.mic : Icons.mic_none, size: 38),
@@ -66,7 +66,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Colors.blue,
+          //color: Colors.blue,
+          color: Theme.of(context).bottomAppBarColor,
           shape: const CircularNotchedRectangle(),
           notchMargin: 10,
           child: SizedBox(
@@ -97,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                           Icon(
                             Icons.send,
                             color: _selectedIndex == 0
-                                ? Colors.white
+                                ? const Color.fromARGB(255, 233, 54, 203)
                                 : Colors.grey,
                           ),
                         ],

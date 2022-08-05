@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      darkTheme: ThemeData.dark(), // standard dark theme
+      themeMode: ThemeMode.system,
       home: AnimatedSplashScreen(
           splash: Icons.mail,
           duration: 2000,
