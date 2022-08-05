@@ -1,7 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mailapp/splashscreen/splash.dart';
+//import 'package:mailapp/splashscreen/splash.dart';
 import 'homepage/home_page.dart';
 
 Future main() async {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           duration: 2000,
           splashTransition: SplashTransition.rotationTransition,
           backgroundColor: Colors.blue,
-          nextScreen: HomePage()),
+          nextScreen: const HomePage()),
     );
   }
 }

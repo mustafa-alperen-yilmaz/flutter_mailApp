@@ -49,5 +49,9 @@
 	<string>Speech Recognition is required</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone is required</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlegmail</string>
+	</array>
 </dict>
 </plist>
